@@ -5,6 +5,7 @@ import {
   LoginComponent,
   HomeComponent
 } from './containers';
+import {AuthGuard} from "./services/auth-guard.service";
 
 export const routes: Routes = [
   {
@@ -23,6 +24,7 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
+    canActivate: [AuthGuard],
     component: HomeComponent,
     children: [
       {

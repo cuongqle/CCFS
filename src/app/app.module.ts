@@ -66,6 +66,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import {AuthenticationService} from "./services/authentication.service";
+import {AuthGuard} from "./services/auth-guard.service";
 
 @NgModule({
   imports: [
@@ -83,10 +84,13 @@ import {AuthenticationService} from "./services/authentication.service";
     ...APP_DIRECTIVES
   ],
   providers: [
-    AuthenticationService, {
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+    AuthenticationService,
+    AuthGuard,
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
