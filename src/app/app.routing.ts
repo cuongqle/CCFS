@@ -9,27 +9,31 @@ import {
 
 export const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     component: LoginComponent,
     data: {
       title: 'Home'
     },
     children: [
       {
-        path: '',
+        path: 'login',
         loadChildren: './views/login/login.module#LoginModule'
+      },
+      {
+        path: 'register',
+        loadChildren: './views/register/register.module#RegisterModule'
       }
     ]
   },
   {
-    path: '',
+    path: 'dashboard',
     component: HomeComponent,
     data: {
       title: 'Home'
     },
     children: [
       {
-        path: 'dashboard',
+        path: '',
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       }
     ]

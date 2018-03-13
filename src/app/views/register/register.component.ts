@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  templateUrl: 'login.component.html'
+  templateUrl: 'register.component.html'
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   model: any = {};
 
   constructor() {
@@ -11,5 +11,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 }
