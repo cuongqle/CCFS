@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// Import Containers
 import {
   LoginComponent,
   HomeComponent
@@ -11,9 +10,6 @@ export const routes: Routes = [
   {
     path: '',
     component: LoginComponent,
-    data: {
-      title: 'Home'
-    },
     children: [
       {
         path: 'login',
@@ -28,15 +24,17 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: HomeComponent,
-    data: {
-      title: 'Home'
-    },
     children: [
       {
         path: '',
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
   }
 ];
 
