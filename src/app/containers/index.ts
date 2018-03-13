@@ -1,2 +1,2 @@
-export * from './full-layout';
-export * from './simple-layout';
+export * from './login';
+export * from './home';

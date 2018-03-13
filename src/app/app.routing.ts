@@ -3,19 +3,27 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Import Containers
 import {
-  FullLayoutComponent,
-  SimpleLayoutComponent
+  LoginComponent,
+  HomeComponent
 } from './containers';
 
 export const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Home'
+    },
+    children: [
+      {
+        path: '',
+        loadChildren: './views/login/login.module#LoginModule'
+      }
+    ]
   },
   {
     path: '',
-    component: FullLayoutComponent,
+    component: HomeComponent,
     data: {
       title: 'Home'
     },

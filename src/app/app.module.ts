@@ -7,13 +7,13 @@ import { AppComponent } from './app.component';
 
 // Import containers
 import {
-  FullLayoutComponent,
-  SimpleLayoutComponent
+  LoginComponent,
+  HomeComponent
 } from './containers';
 
 const APP_CONTAINERS = [
-  FullLayoutComponent,
-  SimpleLayoutComponent
+  LoginComponent,
+  HomeComponent
 ]
 
 // Import components
