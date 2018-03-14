@@ -22,6 +22,10 @@ export const routes: Routes = [
         loadChildren: './views/login/login.module#LoginModule'
       },
       {
+        path: 'logout',
+        loadChildren: './views/logout/logout.module#LogoutModule'
+      },
+      {
         path: 'register',
         loadChildren: './views/register/register.module#RegisterModule'
       }

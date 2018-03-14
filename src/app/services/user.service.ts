@@ -1,12 +1,15 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {UserDTO} from "../dtos/UserDTOs";
+import {AbstractService} from "./base.service";
 
 @Injectable()
-export class UserService {
-  constructor(private http: HttpClient) { }
+export class UserService extends AbstractService {
+  constructor(private http: HttpClient) {
+    super();
+  }
 
   create(user: UserDTO) {
-    return this.http.post('/api/users', user);
+    return this.http.post(`${this.baseURL}/api/users`, user);
   }
 }
