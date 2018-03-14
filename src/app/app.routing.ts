@@ -10,6 +10,11 @@ import {AuthGuard} from "./services/auth-guard.service";
 export const routes: Routes = [
   {
     path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
+  },
+  {
+    path: '',
     component: LoginComponent,
     children: [
       {
@@ -32,11 +37,6 @@ export const routes: Routes = [
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       }
     ]
-  },
-  {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
   }
 ];
 
