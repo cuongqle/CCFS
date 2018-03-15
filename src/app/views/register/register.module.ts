@@ -4,14 +4,20 @@ import { RegisterComponent } from './register.component';
 import { RegisterRoutingModule } from './register-routing.module';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
+import {UserService} from "../../services/user.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   imports: [
     CommonModule,
     RegisterRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  declarations: [ RegisterComponent ]
+  declarations: [ RegisterComponent ],
+  providers: [
+    UserService
+  ]
 })
 export class RegisterModule { }

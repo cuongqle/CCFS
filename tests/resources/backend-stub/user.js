@@ -7,4 +7,8 @@ router.post('/api/authenticate', (req, res) => {
   });
 });
 
+router.post('/api/users', (req, res) => {
+  res.status(200).json({});
+});
+
 module.exports = router;
