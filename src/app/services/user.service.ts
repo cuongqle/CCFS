@@ -1,7 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {UserDTO} from "../dtos/UserDTOs";
+import {UserDTO} from "../dtos/userDTOs";
 import {AbstractService} from "./base.service";
+
 
 @Injectable()
 export class UserService extends AbstractService {

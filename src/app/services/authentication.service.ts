@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import 'rxjs/add/operator/map'
-import {LoginDTO} from "../dtos/UserDTOs";
+import {LoginDTO} from "../dtos/userDTOs";
 import {AbstractService} from "./base.service";
 
 @Injectable()
