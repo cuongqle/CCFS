@@ -3,8 +3,8 @@
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card mx-4">
-          <div class="card-body p-4">
-            <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm">
+          <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm">
+            <div class="card-body p-4">
               <h1>Register</h1>
               <p class="text-muted">Create your account</p>
               <div class="input-group mb-3" [ngClass]="{'has-danger has-feedback': f.submitted && !firstName.valid}">
@@ -28,17 +28,20 @@
                 <input type="text" class="form-control form-control-danger" name="username" [(ngModel)]="model.username" #username="ngModel" placeholder="User Name" required>
               </div>
 
-              <div class="input-group mb-3" [ngClass]="{'has-danger has-feedback': f.submitted && !password.valid}">
+              <div class="input-group" [ngClass]="{'has-danger has-feedback': f.submitted && !password.valid}">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="icon-lock"></i></span>
                 </div>
                 <input type="password" class="form-control form-control-danger" name="password" [(ngModel)]="model.password" #password="ngModel" placeholder="Password" required>
               </div>
 
-              <button type="submit" class="btn btn-block btn-success">Create Account</button>
+            </div>
 
-            </form>
-          </div>
+            <div class="card-footer">
+              <button type="submit" class="btn btn-sm btn-success">Create Account</button>
+              <button (click)="onCancel()" class="btn btn-sm btn-danger">Cancel</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

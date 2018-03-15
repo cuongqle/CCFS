@@ -20,4 +20,8 @@ export class RegisterComponent implements OnInit {
         data => { this.router.navigate(['/login']) },
         error => { console.log(error) });
   }
+
+  onCancel() {
+    this.router.navigate(['/login']);
+  }
 }
