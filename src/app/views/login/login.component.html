@@ -8,11 +8,11 @@
               <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm">
                 <h1>Login</h1>
                 <p class="text-muted">Sign In to your account</p>
-                <div class="input-group mb-3" [ngClass]="{'has-danger has-feedback': f.submitted && !username.valid}">
+                <div class="input-group mb-3" [ngClass]="{'has-danger has-feedback': f.submitted && !email.valid}">
                   <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-user"></i></span>
+                    <span class="input-group-text">@</span>
                   </div>
-                  <input type="text" class="form-control form-control-danger" name="username" #username="ngModel" [(ngModel)]="model.username" placeholder="Username" required>
+                  <input type="email" class="form-control form-control-danger" name="email" #username="ngModel" [(ngModel)]="model.email" placeholder="Email" required>
                 </div>
                 <div class="input-group mb-4" [ngClass]="{'has-danger has-feedback': f.submitted && !password.valid}">
                   <div class="input-group-prepend">
