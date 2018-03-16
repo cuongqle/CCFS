@@ -3,14 +3,21 @@ import { Routes,
      RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './dashboard.component';
+import {DebtorComponent} from "./debtor/debtor.component";
+import {SettingComponent} from "./setting/setting.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent,
-    data: {
-      title: 'Dashboard'
-    }
+    component: DashboardComponent
+  },
+  {
+    path: 'setting',
+    component: SettingComponent
+  },
+  {
+    path: 'debtor',
+    component: DebtorComponent
   }
 ];
 

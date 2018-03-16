@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  templateUrl: 'dashboard.component.html'
+  templateUrl: 'debtor.component.html'
 })
-export class DashboardComponent {
+export class DebtorComponent {
   constructor( ) { }
 }
