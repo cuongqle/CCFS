@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {UserDTO} from "../dtos/userDTOs";
 import {AbstractService} from "./base.service";
+import {User} from "../dtos/UserDTOs";
 
 
 @Injectable()
@@ -10,7 +10,7 @@ export class UserService extends AbstractService {
     super();
   }
 
-  create(user: UserDTO) {
+  create(user: User) {
     return this.http.post(`${this.baseURL}/api/users`, user);
   }
 }

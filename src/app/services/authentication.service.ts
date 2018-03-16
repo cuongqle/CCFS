@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import 'rxjs/add/operator/map'
-import {LoginDTO} from "../dtos/userDTOs";
 import {AbstractService} from "./base.service";
+import {Login} from "../dtos/UserDTOs";
 
 @Injectable()
 export class AuthenticationService extends AbstractService {
@@ -10,7 +10,7 @@ export class AuthenticationService extends AbstractService {
     super();
   }
 
-  login(login: LoginDTO) {
+  login(login: Login) {
     return this.http.post<any>(`${this.baseURL}/api/authenticate`, login)
       .map(user => {
         if (user && user.token) {

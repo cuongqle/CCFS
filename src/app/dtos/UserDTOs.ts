@@ -1,15 +1,15 @@
-export interface LoginDTO {
+export interface Login {
   username: string;
   password: string;
 }
 
-export interface UserDTO {
+export interface User {
   userID: number;
   firstName: string;
   lastName: string;
   username: string;
   password: string;
-  userCompanyInfo: UserCompanyInfo; 
+  userCompanyInfo: UserCompanyInfo;
 }
 
 export class AccountType {
