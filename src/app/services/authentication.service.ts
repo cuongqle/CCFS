@@ -3,24 +3,25 @@ import {HttpClient} from "@angular/common/http";
 import 'rxjs/add/operator/map'
 import {AbstractService} from "./base.service";
 import {Login} from "../dtos/UserDTOs";
+import {LocalStorageService} from "angular-2-local-storage";
 
 @Injectable()
 export class AuthenticationService extends AbstractService {
-  constructor(private http: HttpClient) {
-    super();
+  constructor(private http: HttpClient, localStorageService: LocalStorageService) {
+    super(localStorageService);
   }
 
   login(login: Login) {
     return this.http.post<any>(`${this.baseURL}/api/authenticate`, login)
       .map(user => {
         if (user && user.token) {
-          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.localStorageService.set('currentUser', JSON.stringify(user));
         }
         return user;
       });
   }
 
   logout() {
-    localStorage.removeItem('currentUser');
+    this.localStorageService.remove('currentUser');
   }
 }
