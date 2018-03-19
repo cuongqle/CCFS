@@ -67,6 +67,9 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import {AuthenticationService} from "./services/authentication.service";
 import {AuthGuard} from "./services/auth-guard.service";
+import {UserService} from "./services/user.service";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
@@ -76,6 +79,7 @@ import {AuthGuard} from "./services/auth-guard.service";
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
+    HttpClientModule,
     LocalStorageModule.withConfig({
       prefix: 'CCFS',
       storageType: 'localStorage'
@@ -89,6 +93,7 @@ import {AuthGuard} from "./services/auth-guard.service";
   ],
   providers: [
     AuthenticationService,
+    UserService,
     AuthGuard,
     {
       provide: LocationStrategy,

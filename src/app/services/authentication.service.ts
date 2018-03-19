@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import 'rxjs/add/operator/map'
 import {AbstractService} from "./base.service";
-import {Login} from "../dtos/UserDTOs";
+import {Login} from "../dtos/userDTOs";
 import {LocalStorageService} from "angular-2-local-storage";
 
 @Injectable()

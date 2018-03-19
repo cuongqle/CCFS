@@ -12,12 +12,8 @@ import {HttpClientModule} from "@angular/common/http";
     CommonModule,
     LoginRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule
   ],
-  declarations: [ LoginComponent ],
-  providers: [
-    AuthenticationService
-  ]
+  declarations: [ LoginComponent ]
 })
 export class LoginModule { }

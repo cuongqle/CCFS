@@ -12,12 +12,8 @@ import {HttpClientModule} from "@angular/common/http";
     CommonModule,
     RegisterRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule
   ],
-  declarations: [ RegisterComponent ],
-  providers: [
-    UserService
-  ]
+  declarations: [ RegisterComponent ]
 })
 export class RegisterModule { }

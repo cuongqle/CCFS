@@ -1,0 +1,18 @@
+{
+  "userID": 1,
+  "firstName": "Cuong",
+  "lastName": "Le",
+  "email": "test@gmail.com",
+  "userCompanyInfo": {
+    "id": 1,
+    "companyName": "this is mock company",
+    "address": "mock address",
+    "email": "company@gmail.com",
+    "phoneNumber": "123",
+    "accountType": {
+      "id": "",
+      "name": "",
+      "price": ""
+    }
+  }
+}
