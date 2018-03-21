@@ -5,6 +5,7 @@ import { Routes,
 import { DashboardComponent } from './dashboard.component';
 import {DebtorComponent} from "./debtor/debtor.component";
 import {SettingComponent} from "./setting/setting.component";
+import {GetLoggedUserResolver} from "../../services/resolvers/logged-user.resolver";
 
 const routes: Routes = [
   {
@@ -13,7 +14,10 @@ const routes: Routes = [
   },
   {
     path: 'setting',
-    component: SettingComponent
+    component: SettingComponent,
+    resolve: {
+      resolverGetLoggedUser: GetLoggedUserResolver
+    }
   },
   {
     path: 'debtor',

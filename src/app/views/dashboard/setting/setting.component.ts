@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import { Router } from '@angular/router';
-import {UserService} from "../../../services/user.service";
 import {User} from "../../../dtos/userDTOs";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   templateUrl: 'setting.component.html'
@@ -9,11 +8,10 @@ import {User} from "../../../dtos/userDTOs";
 export class SettingComponent implements OnInit  {
   user: User;
 
-  constructor(private userService: UserService) { }
+  constructor(private activatedRouter: ActivatedRoute) {
+    this.user = this.activatedRouter.snapshot.data['resolverGetLoggedUser'];
+  }
 
   ngOnInit() {
-    this.userService.getLoggedUser().subscribe((result: User) => {
-      this.user = result;
-    });
   }
 }

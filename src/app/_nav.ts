@@ -8,7 +8,7 @@ export const navigation = [
   },
   {
     name: 'Debtor',
-    url: '/debtor',
+    url: '/dashboard/debtor',
     icon: 'fa fa-money',
     badge: {
       variant: 'info'
@@ -25,7 +25,7 @@ export const navigation = [
   {
     name: 'Templates',
     url: '/templates',
-    icon: 'icon-envelope-letter',
+    icon: 'icon-note',
     badge: {
       variant: 'info'
     }

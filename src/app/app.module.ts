@@ -70,6 +70,7 @@ import {AuthGuard} from "./services/auth-guard.service";
 import {UserService} from "./services/user.service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {GetLoggedUserResolver} from "./services/resolvers/logged-user.resolver";
 
 @NgModule({
   imports: [
@@ -93,6 +94,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
   ],
   providers: [
     AuthenticationService,
+    GetLoggedUserResolver,
     UserService,
     AuthGuard,
     {
