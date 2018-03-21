@@ -17,7 +17,7 @@ export const navigation = [
   },
   {
     name: 'Templates',
-    url: '/templates',
+    url: '/dashboard/templates',
     icon: 'icon-note',
     badge: {
       variant: 'info'
@@ -25,7 +25,7 @@ export const navigation = [
   },
   {
     name: 'Letters',
-    url: '/letters',
+    url: '/dashboard/letters',
     icon: 'icon-envelope-letter',
     badge: {
       variant: 'info'

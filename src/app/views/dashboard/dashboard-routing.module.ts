@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard.component';
 import {DebtorComponent} from "./debtor/debtor.component";
 import {SettingComponent} from "./setting/setting.component";
 import {GetLoggedUserResolver} from "../../services/resolvers/logged-user.resolver";
+import {TemplatesComponent} from "./templates/templates.component";
+import {LettersComponent} from "./letters/letters.component";
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'debtor',
     component: DebtorComponent
+  },
+  {
+    path: 'templates',
+    component: TemplatesComponent
+  },
+  {
+    path: 'letters',
+    component: LettersComponent
   }
 ];
 
