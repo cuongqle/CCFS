@@ -2,6 +2,7 @@ export const navigation = [
   {
     name: 'Dashboard',
     url: '/dashboard',
+    icon: 'icon-speedometer',
     badge: {
       variant: 'info'
     }
@@ -15,14 +16,6 @@ export const navigation = [
     }
   },
   {
-    name: 'CC Letter',
-    url: '/cc-letter',
-    icon: 'icon-envelope-letter',
-    badge: {
-      variant: 'info'
-    }
-  },
-  {
     name: 'Templates',
     url: '/templates',
     icon: 'icon-note',
@@ -31,8 +24,8 @@ export const navigation = [
     }
   },
   {
-    name: 'CC Letters',
-    url: '/cc-letters',
+    name: 'Letters',
+    url: '/letters',
     icon: 'icon-envelope-letter',
     badge: {
       variant: 'info'
