@@ -10,6 +10,16 @@ export class SettingComponent implements OnInit  {
   user: User;
   form: FormGroup;
 
+  accountTypes: any[] = [
+    { id: 1, name: "Basic" },
+    { id: 2, name: "Premium" }
+  ];
+
+  frequences: any[] = [
+    { id: 1, name: "Monthly" },
+    { id: 2, name: "Annually" }
+  ];
+
   constructor(private activatedRouter: ActivatedRoute, private formBuilder: FormBuilder) {
     this.user = this.activatedRouter.snapshot.data['resolverGetLoggedUser'];
   }

@@ -8,9 +8,11 @@ import {SettingComponent} from "./setting/setting.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TemplatesComponent} from "./templates/templates.component";
 import {LettersComponent} from "./letters/letters.component";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   imports: [
+    CommonModule,
     DashboardRoutingModule,
     ChartsModule,
     FormsModule,
