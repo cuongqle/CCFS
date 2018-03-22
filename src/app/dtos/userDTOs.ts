@@ -28,6 +28,8 @@ export class UserCompanyInfo {
   website: string;
   accountType: AccountType;
   frequence: Frequence;
+  logo: string;
+  bankInfo: string;
 }
 
 export class UserCompanyInvoice {
