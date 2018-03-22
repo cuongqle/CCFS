@@ -9,10 +9,11 @@
     "address": "mock address",
     "email": "company@gmail.com",
     "phoneNumber": "123",
+    "website": "test.com",
     "accountType": {
-      "id": "",
-      "name": "",
-      "price": ""
-    }
+      "id": "1",
+      "name": "Basic"
+    },
+    "frequence": "1"
   }
 }

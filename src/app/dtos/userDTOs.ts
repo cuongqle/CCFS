@@ -12,6 +12,8 @@ export interface User {
   userCompanyInfo: UserCompanyInfo;
 }
 
+export enum Frequence { Monthly = 1, Annually };
+
 export class AccountType {
   id: number;
   name: string;
@@ -24,7 +26,9 @@ export class UserCompanyInfo {
   address: string;
   email: string;
   phoneNumber: string;
+  website: string;
   accountType: AccountType;
+  frequence: Frequence;
 }
 
 export class UserCompanyInvoice {
@@ -47,8 +51,6 @@ export class UserCompanyInvoiceItem {
   quantitiy: string;
   amount: number;
 }
-
-export enum Frequence { Monthly = 1, Annually };
 
 export class ProductItem {
   id: number;
