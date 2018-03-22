@@ -1,84 +1,82 @@
 <div class="animated fadeIn setting">
   <div class="row">
     <div class="col-md-12">
-      <form [formGroup]="form">
-        <div class="card">
-          <div class="card-header">
-            Account Setting of {{user.firstName}} {{user.lastName}}
-          </div>
-          <div class="card-body">
-            <form class="form-horizontal row">
-              <div class="col-md-7">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label">Company Name</label>
-                  <div class="col-md-8">
-                    <input class="form-control">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label">IRD Number</label>
-                  <div class="col-md-8">
-                    <input class="form-control">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label">Mail Address</label>
-                  <div class="col-md-8">
-                    <input class="form-control" placeholder="Use Google Address API">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label">Account Type</label>
-                  <div class="col-md-8">
-                    <select class="form-control" placeholder="Basic"></select>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label">Bill Frequency</label>
-                  <div class="col-md-8">
-                    <select class="form-control" placeholder="Monthly"></select>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label">Official Email</label>
-                  <div class="col-md-8">
-                    <input class="form-control" >
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label">Phone Number</label>
-                  <div class="col-md-8">
-                    <input class="form-control" >
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label">Website</label>
-                  <div class="col-md-8">
-                    <input class="form-control" >
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-5">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label">Logo</label>
-                  <div class="col-md-9">
-                    <div class="logo"></div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label">Bank Info</label>
-                  <div class="col-md-9">
-                    <textarea class="form-control" rows="6"></textarea>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="card-footer right">
-            <button class="btn btn-sm btn-primary btn-save" >Save</button>
-          </div>
+      <div class="card">
+        <div class="card-header">
+          Account Setting of {{user.firstName}} {{user.lastName}}
         </div>
-      </form>
+        <div class="card-body">
+          <form  [formGroup]="form" class="form-horizontal row">
+            <div class="col-md-7" formGroupName="userCompanyInfo">
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label">Company Name</label>
+                <div class="col-md-8">
+                  <input class="form-control" formControlName="companyName">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label">IRD Number</label>
+                <div class="col-md-8">
+                  <input class="form-control" formControlName="taxNumber">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label">Address</label>
+                <div class="col-md-8">
+                  <input class="form-control" formControlName="address">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label">Account Type</label>
+                <div class="col-md-8">
+                  <select class="form-control" placeholder="Basic"></select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label">Bill Frequency</label>
+                <div class="col-md-8">
+                  <select class="form-control" placeholder="Monthly"></select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label">Official Email</label>
+                <div class="col-md-8">
+                  <input class="form-control" formControlName="email">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label">Phone Number</label>
+                <div class="col-md-8">
+                  <input class="form-control" formControlName="phoneNumber">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label">Website</label>
+                <div class="col-md-8">
+                  <input class="form-control" formControlName="website">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label">Logo</label>
+                <div class="col-md-9">
+                  <div class="logo"></div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label">Bank Info</label>
+                <div class="col-md-9">
+                  <textarea class="form-control" rows="6"></textarea>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer right">
+          <button class="btn btn-sm btn-primary btn-save" [attr.disabled]="!form.valid ? '' : null">Save</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

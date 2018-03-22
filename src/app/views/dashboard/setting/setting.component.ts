@@ -19,12 +19,16 @@ export class SettingComponent implements OnInit  {
       userID: [this.user.userID],
       firstName: [this.user.firstName],
       lastName: [this.user.lastName],
-      email: [this.user.email],
-      password: [this.user.password],
       userCompanyInfo: this.formBuilder.group({
         id: [this.user.userCompanyInfo.id],
         companyName: [this.user.userCompanyInfo.companyName, [Validators.required]],
-        address: [this.user.userCompanyInfo.address, [Validators.required]]
+        taxNumber: [this.user.userCompanyInfo.taxNumber, [Validators.required]],
+        address: [this.user.userCompanyInfo.address, [Validators.required]],
+        accountType: [this.user.userCompanyInfo.accountType, [Validators.required]],
+        frequence: [this.user.userCompanyInfo.frequence, [Validators.required]],
+        email: [this.user.userCompanyInfo.email, [Validators.required]],
+        phoneNumber: [this.user.userCompanyInfo.phoneNumber, [Validators.required]],
+        website: [this.user.userCompanyInfo.website, [Validators.required]]
       })
     });
   }

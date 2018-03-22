@@ -6,6 +6,7 @@
   "userCompanyInfo": {
     "id": 1,
     "companyName": "this is mock company",
+    "taxNumber": "TAX-123-456-789",
     "address": "mock address",
     "email": "company@gmail.com",
     "phoneNumber": "123",

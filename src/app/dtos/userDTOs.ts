@@ -7,8 +7,6 @@ export interface User {
   userID: number;
   firstName: string;
   lastName: string;
-  email: string;
-  password: string;
   userCompanyInfo: UserCompanyInfo;
 }
 
@@ -26,6 +24,7 @@ export class UserCompanyInfo {
   address: string;
   email: string;
   phoneNumber: string;
+  taxNumber: string;
   website: string;
   accountType: AccountType;
   frequence: Frequence;
