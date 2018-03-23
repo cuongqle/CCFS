@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import {LocationStrategy, HashLocationStrategy, CommonModule} from '@angular/common';
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { AppComponent } from './app.component';
 
@@ -69,7 +69,6 @@ import {AuthenticationService} from "./services/authentication.service";
 import {AuthGuard} from "./services/auth-guard.service";
 import {UserService} from "./services/user.service";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {GetLoggedUserResolver} from "./services/resolvers/logged-user.resolver";
 
 @NgModule({

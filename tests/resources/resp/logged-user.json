@@ -11,10 +11,7 @@
     "email": "company@gmail.com",
     "phoneNumber": "123",
     "website": "test.com",
-    "accountType": {
-      "id": "1",
-      "name": "Basic"
-    },
+    "accountType": "2",
     "frequence": "1",
     "bankInfo": "this is sample bacnk info"
   }

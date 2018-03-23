@@ -26,7 +26,7 @@ export class UserCompanyInfo {
   phoneNumber: string;
   taxNumber: string;
   website: string;
-  accountType: AccountType;
+  accountType: string;
   frequence: Frequence;
   logo: string;
   bankInfo: string;

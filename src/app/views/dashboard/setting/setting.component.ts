@@ -45,6 +45,5 @@ export class SettingComponent implements OnInit  {
   }
 
   save() {
-
   }
 }

@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TemplatesComponent} from "./templates/templates.component";
 import {LettersComponent} from "./letters/letters.component";
 import {CommonModule} from "@angular/common";
+import {SelectModule} from "ng-select";
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {CommonModule} from "@angular/common";
     DashboardRoutingModule,
     ChartsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SelectModule
   ],
   declarations: [
     DashboardComponent,
