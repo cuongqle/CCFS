@@ -12,9 +12,19 @@
     border-bottom: 2px solid #cfd8dc;
   }
 
+  tbody tr td {
+    button {
+      padding: 0;
+      width: 45px;
+      height: 22px;
+      line-height: 22px;
+    }
+  }
+
   tbody + tbody {
     border-top: 2px solid #cfd8dc;
   }
+
   .table {
     background-color: #e4e5e6;
   }
