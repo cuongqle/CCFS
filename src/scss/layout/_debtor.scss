@@ -1,0 +1,28 @@
+.debtor {
+  .header-debtor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .search-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      div, i, input {
+        margin-right: 15px;
+      }
+      i {
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+  .card-body {
+    tbody {
+      tr {
+        td {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
