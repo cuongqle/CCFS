@@ -38,8 +38,13 @@ export class SettingComponent implements OnInit  {
         frequence: [this.user.userCompanyInfo.frequence, [Validators.required]],
         email: [this.user.userCompanyInfo.email, [Validators.required]],
         phoneNumber: [this.user.userCompanyInfo.phoneNumber, [Validators.required]],
-        website: [this.user.userCompanyInfo.website, [Validators.required]]
+        website: [this.user.userCompanyInfo.website, [Validators.required]],
+        bankInfo: [this.user.userCompanyInfo.bankInfo, [Validators.required]]
       })
     });
+  }
+
+  save() {
+
   }
 }

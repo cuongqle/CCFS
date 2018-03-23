@@ -15,6 +15,7 @@
       "id": "1",
       "name": "Basic"
     },
-    "frequence": "1"
+    "frequence": "1",
+    "bankInfo": "this is sample bacnk info"
   }
 }

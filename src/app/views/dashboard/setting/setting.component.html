@@ -6,72 +6,72 @@
           Account Setting of {{user.firstName}} {{user.lastName}}
         </div>
         <div class="card-body">
-          <form  [formGroup]="form" class="form-horizontal row">
+          <form [formGroup]="form" (ngSubmit)="f.form.valid && save()" #f="ngForm" class="form-horizontal row">
             <div class="col-md-7" formGroupName="userCompanyInfo">
-              <div class="form-group row">
+              <div class="form-group row" [ngClass]="{'has-danger has-feedback': !form.controls.userCompanyInfo.controls.companyName.valid}">
                 <label class="col-md-3 col-form-label">Company Name</label>
                 <div class="col-md-8">
-                  <input class="form-control" formControlName="companyName">
+                  <input class="form-control form-control-danger" formControlName="companyName">
                 </div>
               </div>
-              <div class="form-group row">
+              <div class="form-group row" [ngClass]="{'has-danger has-feedback': !form.controls.userCompanyInfo.controls.taxNumber.valid}">
                 <label class="col-md-3 col-form-label">IRD Number</label>
                 <div class="col-md-8">
-                  <input class="form-control" formControlName="taxNumber">
+                  <input class="form-control form-control-danger" formControlName="taxNumber">
                 </div>
               </div>
-              <div class="form-group row">
+              <div class="form-group row" [ngClass]="{'has-danger has-feedback': !form.controls.userCompanyInfo.controls.address.valid}">
                 <label class="col-md-3 col-form-label">Address</label>
                 <div class="col-md-8">
-                  <input class="form-control" formControlName="address">
+                  <input class="form-control form-control-danger" formControlName="address">
                 </div>
               </div>
-              <div class="form-group row">
+              <div class="form-group row" [ngClass]="{'has-danger has-feedback': !form.controls.userCompanyInfo.controls.accountType.valid}">
                 <label class="col-md-3 col-form-label">Account Type</label>
                 <div class="col-md-8">
-                  <select class="form-control">
+                  <select class="form-control form-control-danger">
                     <option *ngFor="let type of accountTypes">{{type.name}}</option>
                   </select>
                 </div>
               </div>
-              <div class="form-group row">
+              <div class="form-group row" [ngClass]="{'has-danger has-feedback': !form.controls.userCompanyInfo.controls.frequence.valid}">
                 <label class="col-md-3 col-form-label">Bill Frequency</label>
                 <div class="col-md-8">
-                  <select class="form-control">
+                  <select class="form-control form-control-danger">
                     <option *ngFor="let frequence of frequences">{{frequence.name}}</option>
                   </select>
                 </div>
               </div>
-              <div class="form-group row">
+              <div class="form-group row" [ngClass]="{'has-danger has-feedback': !form.controls.userCompanyInfo.controls.email.valid}">
                 <label class="col-md-3 col-form-label">Official Email</label>
                 <div class="col-md-8">
-                  <input class="form-control" formControlName="email">
+                  <input class="form-control form-control-danger" formControlName="email">
                 </div>
               </div>
-              <div class="form-group row">
+              <div class="form-group row" [ngClass]="{'has-danger has-feedback': !form.controls.userCompanyInfo.controls.phoneNumber.valid}">
                 <label class="col-md-3 col-form-label">Phone Number</label>
                 <div class="col-md-8">
-                  <input class="form-control" formControlName="phoneNumber">
+                  <input class="form-control form-control-danger" formControlName="phoneNumber">
                 </div>
               </div>
-              <div class="form-group row">
+              <div class="form-group row" [ngClass]="{'has-danger has-feedback': !form.controls.userCompanyInfo.controls.website.valid}">
                 <label class="col-md-3 col-form-label">Website</label>
                 <div class="col-md-8">
-                  <input class="form-control" formControlName="website">
+                  <input class="form-control form-control-danger" formControlName="website">
                 </div>
               </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5" formGroupName="userCompanyInfo">
               <div class="form-group row">
                 <label class="col-md-3 col-form-label">Logo</label>
                 <div class="col-md-9">
                   <div class="logo"></div>
                 </div>
               </div>
-              <div class="form-group row">
+              <div class="form-group row" [ngClass]="{'has-danger has-feedback': !form.controls.userCompanyInfo.controls.bankInfo.valid}">
                 <label class="col-md-3 col-form-label">Bank Info</label>
                 <div class="col-md-9">
-                  <textarea class="form-control" rows="6"></textarea>
+                  <textarea class="form-control form-control-danger" formControlName="bankInfo" rows="6"></textarea>
                 </div>
               </div>
             </div>
