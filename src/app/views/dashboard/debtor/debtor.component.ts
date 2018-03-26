@@ -7,6 +7,7 @@ import {Debtor, DebtorInvoice} from "../../../dtos/debtorDTOs";
 })
 export class DebtorComponent {
   debtors: Debtor[];
+  selectedDebtor: Debtor;
   debtorInvoices: DebtorInvoice[];
 
   constructor(private activatedRouter: ActivatedRoute) {
@@ -14,6 +15,7 @@ export class DebtorComponent {
   }
 
   openDetails(debtor: Debtor) {
+    this.selectedDebtor = debtor;
     this.debtorInvoices = debtor.invoices;
   }
 }

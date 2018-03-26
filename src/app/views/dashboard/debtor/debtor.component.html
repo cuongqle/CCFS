@@ -28,7 +28,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let debtor of debtors" (click)="openDetails(debtor)">
+              <tr *ngFor="let debtor of debtors" (click)="openDetails(debtor)" [ngClass]="{'active': debtor === selectedDebtor}">
                 <td>{{debtor.name}}</td>
                 <td>{{debtor.email}}</td>
                 <td>{{debtor.address}}</td>
