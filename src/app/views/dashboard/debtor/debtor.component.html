@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="card">
-        <div class="card-header header-debtor" style="">
+        <div class="card-header debtor-header">
           <div class="col-lg-6 search-header" >
             <div>Debtor</div>
             <input class="form-control form-control-danger">
@@ -14,8 +14,9 @@
           </div>
         </div>
         <div class="card-body">
-          <table class="table table-bordered table-striped table-sm">
-            <thead>
+          <div class="table-wrap">
+            <table class="table table-bordered table-striped table-sm">
+              <thead>
               <tr>
                 <th>Name</th>
                 <th>Email</th>
@@ -25,9 +26,9 @@
                 <th>Status</th>
                 <th></th>
               </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let debtor of debtors">
+              </thead>
+              <tbody>
+              <tr *ngFor="let debtor of debtors" (click)="openDetails(debtor)">
                 <td>{{debtor.name}}</td>
                 <td>{{debtor.email}}</td>
                 <td>{{debtor.address}}</td>
@@ -38,8 +39,9 @@
                   <button class="btn btn-sm btn-primary" >Edit</button>
                 </td>
               </tr>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
           <nav>
             <ul class="pagination">
               <li class="page-item"><a class="page-link" href="#">Prev</a></li>
@@ -64,50 +66,32 @@
           <span>Debtor</span>
         </div>
         <div class="card-body">
-          <table class="table table-bordered table-striped table-sm">
-            <thead>
-            <tr>
-              <th>Invoice Number</th>
-              <th>Invoice Date</th>
-              <th>Invoice Amount</th>
-              <th>Outstanding Amount</th>
-              <th>Status</th>
-              <th></th>
-            </tr>
-            </thead>
-            <tbody>
+          <div class="table-wrap">
+            <table class="table table-bordered table-striped table-sm">
+              <thead>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th>Invoice Number</th>
+                <th>Invoice Date</th>
+                <th>Invoice Amount</th>
+                <th>Outstanding Amount</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let invoice of debtorInvoices">
+                <td>{{invoice.invoiceNumber}}</td>
+                <td>{{invoice.invoiceDate}}</td>
+                <td>{{invoice.invoiceAmount}}</td>
+                <td>{{invoice.outstandingAmount}}</td>
+                <td>{{invoice.status}}</td>
                 <td>
                   <button class="btn btn-sm btn-primary" >Edit</button>
                 </td>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <button class="btn btn-sm btn-primary" >Edit</button>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <button class="btn btn-sm btn-primary" >Edit</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
           <nav>
             <ul class="pagination">
               <li class="page-item"><a class="page-link" href="#">Prev</a></li>
