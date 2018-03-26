@@ -9,6 +9,7 @@ import {GetLoggedUserResolver} from "../../services/resolvers/logged-user.resolv
 import {TemplatesComponent} from "./templates/templates.component";
 import {LettersComponent} from "./letters/letters.component";
 import {DebtorDetailsComponent} from "./debtor/details/debtor-details.component";
+import {GetDebtorListResolver} from "../../services/resolvers/debtor-list.resolver";
 
 const routes: Routes = [
   {
@@ -24,7 +25,10 @@ const routes: Routes = [
   },
   {
     path: 'debtor',
-    component: DebtorComponent
+    component: DebtorComponent,
+    resolve: {
+      resolverGetDebtorList: GetDebtorListResolver
+    }
   },
   {
     path: 'debtor/:id',

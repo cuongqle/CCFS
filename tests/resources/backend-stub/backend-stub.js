@@ -7,6 +7,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/', require('./user'));
+app.use('/', require('./debtor'));
 
 app.all('/200', (req, res) => {
   console.log('request to 200');

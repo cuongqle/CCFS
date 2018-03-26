@@ -10,16 +10,16 @@ export class UserService extends AbstractService {
     super(localStorageService);
   }
 
-  create(user: Register) {
-    return this.http.post(`${this.baseURL}/api/user`, user);
-  }
-
   getLoggedUser() {
     return this.http.get(`${this.baseURL}/api/user`, {
       headers: {
         'Authorization': this.getAuthorization()
       }
     });
+  }
+
+  create(user: Register) {
+    return this.http.post(`${this.baseURL}/api/user`, user);
   }
 
   getById(id: number) {
