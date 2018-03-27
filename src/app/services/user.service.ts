@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {AbstractService} from "./base.service";
-import {Register} from "../dtos/userDTOs";
+import {Register, User} from "../dtos/userDTOs";
 import {LocalStorageService} from "angular-2-local-storage";
 
 @Injectable()
@@ -20,6 +20,14 @@ export class UserService extends AbstractService {
 
   create(user: Register) {
     return this.http.post(`${this.baseURL}/api/user`, user);
+  }
+
+  update(user: User) {
+    return this.http.put(`${this.baseURL}/api/user`, user, {
+      headers: {
+        'Authorization': this.getAuthorization()
+      }
+    });
   }
 
   getById(id: number) {

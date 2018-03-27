@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {User} from "../../../dtos/userDTOs";
 import {ActivatedRoute} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {UserService} from "../../../services/user.service";
 
 @Component({
   templateUrl: 'setting.component.html'
@@ -9,6 +10,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class SettingComponent implements OnInit  {
   user: User;
   form: FormGroup;
+  loading: boolean = false;
 
   accountTypes: any[] = [
     { id: 1, name: "Basic" },
@@ -20,7 +22,8 @@ export class SettingComponent implements OnInit  {
     { id: 2, name: "Annually" }
   ];
 
-  constructor(private activatedRouter: ActivatedRoute, private formBuilder: FormBuilder) {
+  constructor(private activatedRouter: ActivatedRoute, private formBuilder: FormBuilder,
+              private userService: UserService) {
     this.user = this.activatedRouter.snapshot.data['resolverGetLoggedUser'];
   }
 
@@ -45,5 +48,11 @@ export class SettingComponent implements OnInit  {
   }
 
   save() {
+    if (this.form.valid) {
+      this.loading = true;
+      this.userService.update(this.form.value).subscribe((result: any) => {
+        this.loading = false;
+      });
+    }
   }
 }

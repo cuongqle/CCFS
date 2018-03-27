@@ -11,6 +11,10 @@ router.post('/api/user', (req, res) => {
   res.status(200).json({});
 });
 
+router.put('/api/user', (req, res) => {
+  res.status(200).json({});
+});
+
 router.get('/api/user', (req, res) => {
   res.status(200).json(require("../resp/logged-user.json"));
 });

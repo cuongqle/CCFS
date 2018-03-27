@@ -6,7 +6,7 @@
           Account Setting of {{user.firstName}} {{user.lastName}}
         </div>
         <div class="card-body">
-          <form [formGroup]="form" (ngSubmit)="f.form.valid && save()" #f="ngForm" class="form-horizontal row">
+          <form [formGroup]="form" class="form-horizontal row">
             <div class="col-md-7" formGroupName="userCompanyInfo">
               <div class="form-group row" [ngClass]="{'has-danger has-feedback': !form.controls.userCompanyInfo.controls.companyName.valid}">
                 <label class="col-md-3 col-form-label">Company Name</label>
@@ -78,7 +78,7 @@
           </form>
         </div>
         <div class="card-footer right">
-          <button class="btn btn-sm btn-primary btn-save" [attr.disabled]="!form.valid ? '' : null">Save</button>
+          <button class="btn btn-sm btn-primary btn-save" (click)="save()" [attr.disabled]="!form.valid ? '' : null">Save</button>
         </div>
       </div>
     </div>
