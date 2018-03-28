@@ -16,4 +16,12 @@ export class DebtorService extends AbstractService {
       }
     });
   }
+
+  getDebtorById(debtorId: string) {
+    return this.http.get(`${this.baseURL}/api/debtor/${debtorId}`, {
+      headers: {
+        'Authorization': this.getAuthorization()
+      }
+    });
+  }
 }

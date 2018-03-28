@@ -11,6 +11,10 @@ import {LettersComponent} from "./letters/letters.component";
 import {CommonModule} from "@angular/common";
 import {SelectModule} from "ng-select";
 import {DebtorDetailsComponent} from "./debtor/details/debtor-details.component";
+import {DebtorService} from "../../services/debtor.service";
+import {GetDebtorListResolver} from "../../services/resolvers/debtor-list.resolver";
+import {GetDebtorByIdResolver} from "../../services/resolvers/debtor-by-id.resolver";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   imports: [
@@ -28,6 +32,11 @@ import {DebtorDetailsComponent} from "./debtor/details/debtor-details.component"
     DebtorDetailsComponent,
     TemplatesComponent,
     LettersComponent
+  ],
+  providers: [
+    DebtorService,
+    GetDebtorListResolver,
+    GetDebtorByIdResolver
   ]
 })
 export class DashboardModule { }

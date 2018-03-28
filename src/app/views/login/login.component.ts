@@ -12,14 +12,14 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private route: ActivatedRoute, private router: Router,
+  constructor(private activatedRouter: ActivatedRoute, private router: Router,
               private authenticationService: AuthenticationService,
               private formBuilder: FormBuilder) {
   }
 
   ngOnInit() {
     this.authenticationService.logout();
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this.activatedRouter.snapshot.queryParams['returnUrl'] || '/';
     this.form = this.formBuilder.group({
       username: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]

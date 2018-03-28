@@ -70,8 +70,6 @@ import {AuthGuard} from "./services/auth-guard.service";
 import {UserService} from "./services/user.service";
 import {HttpClientModule} from "@angular/common/http";
 import {GetLoggedUserResolver} from "./services/resolvers/logged-user.resolver";
-import {DebtorService} from "./services/debtor.service";
-import {GetDebtorListResolver} from "./services/resolvers/debtor-list.resolver";
 
 @NgModule({
   imports: [
@@ -97,8 +95,6 @@ import {GetDebtorListResolver} from "./services/resolvers/debtor-list.resolver";
     AuthenticationService,
     GetLoggedUserResolver,
     UserService,
-    GetDebtorListResolver,
-    DebtorService,
     AuthGuard,
     {
       provide: LocationStrategy,

@@ -10,12 +10,16 @@ export class DebtorComponent {
   selectedDebtor: Debtor;
   debtorInvoices: DebtorInvoice[];
 
-  constructor(private activatedRouter: ActivatedRoute) {
+  constructor(private router: Router, private activatedRouter: ActivatedRoute) {
     this.debtors = this.activatedRouter.snapshot.data['resolverGetDebtorList'];
   }
 
-  openDetails(debtor: Debtor) {
+  showInvoices(debtor: Debtor) {
     this.selectedDebtor = debtor;
     this.debtorInvoices = debtor.invoices;
+  }
+
+  openDebtorDetails(debtor: Debtor) {
+    this.router.navigate(['dashboard/debtor/' + debtor.id]);
   }
 }
