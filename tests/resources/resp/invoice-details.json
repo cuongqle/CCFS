@@ -1,0 +1,10 @@
+{
+  "id": 1,
+  "debtorId": 1,
+  "invoiceNumber": "I0001",
+  "invoiceDate": "2017-06-01",
+  "invoiceAmount": 5000.00,
+  "outstandingAmount": 200.00,
+  "status": "paid",
+  "userCompanyID": 1
+}

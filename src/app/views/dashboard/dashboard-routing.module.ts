@@ -11,6 +11,8 @@ import {LettersComponent} from "./letters/letters.component";
 import {DebtorDetailsComponent} from "./debtor/details/debtor-details.component";
 import {GetDebtorListResolver} from "../../services/resolvers/debtor-list.resolver";
 import {GetDebtorByIdResolver} from "../../services/resolvers/debtor-by-id.resolver";
+import {GetDebtorInvoiceByIdResolver} from "../../services/resolvers/invoice-by-id.resolver";
+import {InvoiceComponent} from "./debtor/invoice/invoice.component";
 
 const routes: Routes = [
   {
@@ -36,6 +38,13 @@ const routes: Routes = [
     component: DebtorDetailsComponent,
     resolve: {
       resolverGetDebtorById: GetDebtorByIdResolver
+    }
+  },
+  {
+    path: 'invoice/:id',
+    component: InvoiceComponent,
+    resolve: {
+      resolverGetDebtorInvoiceById: GetDebtorInvoiceByIdResolver
     }
   },
   {

@@ -14,7 +14,8 @@ import {DebtorDetailsComponent} from "./debtor/details/debtor-details.component"
 import {DebtorService} from "../../services/debtor.service";
 import {GetDebtorListResolver} from "../../services/resolvers/debtor-list.resolver";
 import {GetDebtorByIdResolver} from "../../services/resolvers/debtor-by-id.resolver";
-import {HttpClientModule} from "@angular/common/http";
+import {GetDebtorInvoiceByIdResolver} from "../../services/resolvers/invoice-by-id.resolver";
+import {InvoiceComponent} from "./debtor/invoice/invoice.component";
 
 @NgModule({
   imports: [
@@ -30,13 +31,15 @@ import {HttpClientModule} from "@angular/common/http";
     SettingComponent,
     DebtorComponent,
     DebtorDetailsComponent,
+    InvoiceComponent,
     TemplatesComponent,
     LettersComponent
   ],
   providers: [
     DebtorService,
     GetDebtorListResolver,
-    GetDebtorByIdResolver
+    GetDebtorByIdResolver,
+    GetDebtorInvoiceByIdResolver
   ]
 })
 export class DashboardModule { }

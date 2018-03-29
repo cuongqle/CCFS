@@ -9,4 +9,8 @@ router.get('/api/debtor/:id', (req, res) => {
   res.status(200).json(require("../resp/debtor-details.json"));
 });
 
+router.get('/api/invoice/:id', (req, res) => {
+  res.status(200).json(require("../resp/invoice-details.json"));
+});
+
 module.exports = router;

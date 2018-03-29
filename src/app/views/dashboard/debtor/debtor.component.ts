@@ -22,4 +22,8 @@ export class DebtorComponent {
   openDebtorDetails(debtor: Debtor) {
     this.router.navigate(['dashboard/debtor/' + debtor.id]);
   }
+
+  openDebtorInvoiceDetails(invoice: DebtorInvoice) {
+    this.router.navigate(['dashboard/invoice/' + invoice.id]);
+  }
 }

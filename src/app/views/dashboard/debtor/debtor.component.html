@@ -28,7 +28,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let debtor of debtors" (click)="showInvoices(debtor)" (dblclick)="openDebtorDetails(debtor)" [ngClass]="{'active': debtor === selectedDebtor}">
+              <tr *ngFor="let debtor of debtors" (click)="showInvoices(debtor)" [ngClass]="{'active': debtor === selectedDebtor}">
                 <td>{{debtor.name}}</td>
                 <td>{{debtor.email}}</td>
                 <td>{{debtor.address}}</td>
@@ -36,7 +36,7 @@
                 <td>${{debtor.overdueAmount}}</td>
                 <td>{{debtor.status}}</td>
                 <td>
-                  <button class="btn btn-sm btn-primary" >Edit</button>
+                  <button class="btn btn-sm btn-primary" (click)="openDebtorDetails(debtor)">Edit</button>
                 </td>
               </tr>
               </tbody>
@@ -62,8 +62,7 @@
     <div class="col-lg-12">
       <div class="card">
         <div class="card-header">
-          Invoice of
-          <span>Debtor</span>
+          Invoices of <b>{{selectedDebtor?.name}}</b>
         </div>
         <div class="card-body">
           <div class="table-wrap">
@@ -86,7 +85,7 @@
                 <td>{{invoice.outstandingAmount}}</td>
                 <td>{{invoice.status}}</td>
                 <td>
-                  <button class="btn btn-sm btn-primary" >Edit</button>
+                  <button class="btn btn-sm btn-primary" (click)="openDebtorInvoiceDetails(invoice)">Edit</button>
                 </td>
               </tr>
               </tbody>
