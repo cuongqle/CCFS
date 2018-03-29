@@ -3,10 +3,10 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          Debtor
+          Debtor <b>{{debtor.name}}</b>
         </div>
         <div class="card-body">
-          <form class="form-horizontal row">
+          <form [formGroup]="form" class="form-horizontal row">
             <div class="col-md-6">
               <div class="form-group row">
                 <label class="col-md-4 col-form-label">Debtor ID</label>
@@ -116,7 +116,7 @@
           </form>
         </div>
         <div class="card-footer right">
-          <button class="btn btn-sm btn-primary btn-save">Save</button>
+          <button class="btn btn-sm btn-primary btn-save" (click)="save()" [attr.disabled]="!form.valid ? '' : null">Save</button>
         </div>
       </div>
     </div>
