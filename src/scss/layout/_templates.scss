@@ -1,0 +1,30 @@
+.templates {
+  .table-wrap {
+    height: 220px;
+    overflow-y: auto;
+    tbody {
+      tr {
+        td {
+          text-align: center;
+        }
+        &:hover {
+          background-color: #ffff99;
+          cursor: pointer;
+        }
+        &.active {
+          background-color: #ffff99;
+        }
+      }
+    }
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .btn-save {
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}

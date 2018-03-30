@@ -17,28 +17,28 @@
           <div class="table-wrap">
             <table class="table table-bordered table-striped table-sm">
               <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>Mobile</th>
-                <th>OverDue Amount</th>
-                <th>Status</th>
-                <th></th>
-              </tr>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Address</th>
+                  <th>Mobile</th>
+                  <th>OverDue Amount</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let debtor of debtors" (click)="showInvoices(debtor)" [ngClass]="{'active': debtor === selectedDebtor}">
-                <td>{{debtor.name}}</td>
-                <td>{{debtor.email}}</td>
-                <td>{{debtor.address}}</td>
-                <td>{{debtor.mobileNumber}}</td>
-                <td>${{debtor.overdueAmount}}</td>
-                <td>{{debtor.status}}</td>
-                <td>
-                  <button class="btn btn-sm btn-primary" (click)="openDebtorDetails(debtor)">Edit</button>
-                </td>
-              </tr>
+                <tr *ngFor="let debtor of debtors" (click)="showInvoices(debtor)" [ngClass]="{'active': debtor === selectedDebtor}">
+                  <td>{{debtor.name}}</td>
+                  <td>{{debtor.email}}</td>
+                  <td>{{debtor.address}}</td>
+                  <td>{{debtor.mobileNumber}}</td>
+                  <td>${{debtor.overdueAmount}}</td>
+                  <td>{{debtor.status}}</td>
+                  <td>
+                    <button class="btn btn-sm btn-primary" (click)="openDebtorDetails(debtor)">Edit</button>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
