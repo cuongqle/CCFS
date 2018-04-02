@@ -14,26 +14,10 @@
               </tr>
               </thead>
               <tbody>
-              <tr >
-                <td>Kind Reminder</td>
-                <td>30-60 days</td>
-                <td>Active</td>
-                <td>
-                  <button class="btn btn-sm btn-primary">Edit</button>
-                </td>
-              </tr>
-              <tr >
-                <td>Warning Reminder</td>
-                <td>60-90 days</td>
-                <td></td>
-                <td>
-                  <button class="btn btn-sm btn-primary">Edit</button>
-                </td>
-              </tr>
-              <tr >
-                <td>Legal Warning</td>
-                <td>90 days above</td>
-                <td></td>
+              <tr *ngFor="let template of templates" (click)="selectTemplate(template)" [ngClass]="{'active': template === selectedTemplate}">
+                <td>{{template.name}}</td>
+                <td>{{template.type.description}}</td>
+                <td>{{template.status}}</td>
                 <td>
                   <button class="btn btn-sm btn-primary">Edit</button>
                 </td>

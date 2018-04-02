@@ -16,6 +16,8 @@ import {GetDebtorListResolver} from "../../services/resolvers/debtor-list.resolv
 import {GetDebtorByIdResolver} from "../../services/resolvers/debtor-by-id.resolver";
 import {GetDebtorInvoiceByIdResolver} from "../../services/resolvers/invoice-by-id.resolver";
 import {InvoiceComponent} from "./debtor/invoice/invoice.component";
+import {TemplateService} from "../../services/template.service";
+import {GetTemplateListResolver} from "../../services/resolvers/template-list.resolver";
 
 @NgModule({
   imports: [
@@ -39,7 +41,9 @@ import {InvoiceComponent} from "./debtor/invoice/invoice.component";
     DebtorService,
     GetDebtorListResolver,
     GetDebtorByIdResolver,
-    GetDebtorInvoiceByIdResolver
+    GetDebtorInvoiceByIdResolver,
+    TemplateService,
+    GetTemplateListResolver
   ]
 })
 export class DashboardModule { }

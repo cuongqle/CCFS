@@ -13,6 +13,7 @@ import {GetDebtorListResolver} from "../../services/resolvers/debtor-list.resolv
 import {GetDebtorByIdResolver} from "../../services/resolvers/debtor-by-id.resolver";
 import {GetDebtorInvoiceByIdResolver} from "../../services/resolvers/invoice-by-id.resolver";
 import {InvoiceComponent} from "./debtor/invoice/invoice.component";
+import {GetTemplateListResolver} from "../../services/resolvers/template-list.resolver";
 
 const routes: Routes = [
   {
@@ -49,7 +50,10 @@ const routes: Routes = [
   },
   {
     path: 'templates',
-    component: TemplatesComponent
+    component: TemplatesComponent,
+    resolve: {
+      resolverGetTemplateList: GetTemplateListResolver
+    }
   },
   {
     path: 'letters',

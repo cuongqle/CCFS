@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Kind Reminder",
+    "status": "Active",
+    "type": {
+      "id": 1,
+      "name": "",
+      "description": "30-60 days"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Kind Reminder",
+    "status": "Inactive",
+    "type": {
+      "id": 1,
+      "name": "",
+      "description": "30-60 days"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Warning Reminder",
+    "status": "Active",
+    "type": {
+      "id": 2,
+      "name": "",
+      "description": "60-90 days"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Warning Reminder",
+    "status": "Inactive",
+    "type": {
+      "id": 2,
+      "name": "",
+      "description": "60-90 days"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Legal Warning",
+    "status": "Active",
+    "type": {
+      "id": 3,
+      "name": "",
+      "description": "90 days above"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Legal Warning",
+    "status": "Inactive",
+    "type": {
+      "id": 3,
+      "name": "",
+      "description": "90 days above"
+    }
+  }
+]

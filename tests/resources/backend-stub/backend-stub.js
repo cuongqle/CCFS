@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 
 app.use('/', require('./user'));
 app.use('/', require('./debtor'));
+app.use('/', require('./template'));
 
 app.all('/200', (req, res) => {
   console.log('request to 200');
