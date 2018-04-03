@@ -8,12 +8,14 @@ import {SettingComponent} from "./setting/setting.component";
 import {GetLoggedUserResolver} from "../../services/resolvers/logged-user.resolver";
 import {TemplatesComponent} from "./templates/templates.component";
 import {LettersComponent} from "./letters/letters.component";
-import {DebtorDetailsComponent} from "./debtor/details/debtor-details.component";
+import {DebtorDetailsComponent} from "./debtor/details/edit/debtor-details.component";
 import {GetDebtorListResolver} from "../../services/resolvers/debtor-list.resolver";
 import {GetDebtorByIdResolver} from "../../services/resolvers/debtor-by-id.resolver";
 import {GetDebtorInvoiceByIdResolver} from "../../services/resolvers/invoice-by-id.resolver";
-import {InvoiceComponent} from "./debtor/invoice/invoice.component";
+import {EditInvoiceComponent} from "./debtor/invoice/edit/edit-invoice.component";
 import {GetTemplateListResolver} from "../../services/resolvers/template-list.resolver";
+import {CreateInvoiceComponent} from "./debtor/invoice/create/create-invoice.component";
+import {CreateDebtorComponent} from "./debtor/details/create/create-debtor.component";
 
 const routes: Routes = [
   {
@@ -35,6 +37,10 @@ const routes: Routes = [
     }
   },
   {
+    path: 'create/debtor',
+    component: CreateDebtorComponent
+  },
+  {
     path: 'debtor/:id',
     component: DebtorDetailsComponent,
     resolve: {
@@ -42,8 +48,12 @@ const routes: Routes = [
     }
   },
   {
+    path: 'create/invoice',
+    component: CreateInvoiceComponent
+  },
+  {
     path: 'invoice/:id',
-    component: InvoiceComponent,
+    component: EditInvoiceComponent,
     resolve: {
       resolverGetDebtorInvoiceById: GetDebtorInvoiceByIdResolver
     }

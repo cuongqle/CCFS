@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {DebtorInvoice} from "../../../../dtos/debtorDTOs";
+import {DebtorInvoice} from "../../../../../dtos/debtorDTOs";
 
 @Component({
-  templateUrl: 'invoice.component.html'
+  templateUrl: 'edit-invoice.component.html'
 })
-export class InvoiceComponent {
+export class EditInvoiceComponent {
   invoice: DebtorInvoice;
 
   constructor(private activatedRouter: ActivatedRoute) {

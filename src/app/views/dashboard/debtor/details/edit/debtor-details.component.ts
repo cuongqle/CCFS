@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Debtor} from "../../../../dtos/debtorDTOs";
+import {Debtor} from "../../../../../dtos/debtorDTOs";
 import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({

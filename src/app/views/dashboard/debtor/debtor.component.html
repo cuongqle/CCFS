@@ -7,10 +7,10 @@
             <div>Debtor</div>
             <input class="form-control form-control-danger">
             <i class="fa fa-search"></i>
-            <i class="fa fa-plus"></i>
+            <i class="fa fa-plus" (click)="createDebtor()"></i>
           </div>
-          <div class="col-lg-3" style="text-align: right;">
-            <button class="btn btn-sm btn-primary">Add invoice</button>
+          <div class="col-lg-3 right">
+            <button class="btn btn-sm btn-primary" (click)="createInvoice()">Add invoice</button>
           </div>
         </div>
         <div class="card-body">

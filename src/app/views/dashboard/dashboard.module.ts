@@ -10,14 +10,16 @@ import {TemplatesComponent} from "./templates/templates.component";
 import {LettersComponent} from "./letters/letters.component";
 import {CommonModule} from "@angular/common";
 import {SelectModule} from "ng-select";
-import {DebtorDetailsComponent} from "./debtor/details/debtor-details.component";
+import {DebtorDetailsComponent} from "./debtor/details/edit/debtor-details.component";
 import {DebtorService} from "../../services/debtor.service";
 import {GetDebtorListResolver} from "../../services/resolvers/debtor-list.resolver";
 import {GetDebtorByIdResolver} from "../../services/resolvers/debtor-by-id.resolver";
 import {GetDebtorInvoiceByIdResolver} from "../../services/resolvers/invoice-by-id.resolver";
-import {InvoiceComponent} from "./debtor/invoice/invoice.component";
+import {EditInvoiceComponent} from "./debtor/invoice/edit/edit-invoice.component";
 import {TemplateService} from "../../services/template.service";
 import {GetTemplateListResolver} from "../../services/resolvers/template-list.resolver";
+import {CreateInvoiceComponent} from "./debtor/invoice/create/create-invoice.component";
+import {CreateDebtorComponent} from "./debtor/details/create/create-debtor.component";
 
 @NgModule({
   imports: [
@@ -32,8 +34,10 @@ import {GetTemplateListResolver} from "../../services/resolvers/template-list.re
     DashboardComponent,
     SettingComponent,
     DebtorComponent,
+    CreateDebtorComponent,
     DebtorDetailsComponent,
-    InvoiceComponent,
+    CreateInvoiceComponent,
+    EditInvoiceComponent,
     TemplatesComponent,
     LettersComponent
   ],

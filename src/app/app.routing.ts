@@ -6,6 +6,7 @@ import {
   HomeComponent
 } from './containers';
 import {AuthGuard} from "./services/auth-guard.service";
+import {GetLoggedUserResolver} from "./services/resolvers/logged-user.resolver";
 
 export const routes: Routes = [
   {
@@ -35,6 +36,9 @@ export const routes: Routes = [
     path: 'dashboard',
     canActivate: [AuthGuard],
     component: HomeComponent,
+    resolve: {
+      resolverGetLoggedUser: GetLoggedUserResolver
+    },
     children: [
       {
         path: '',
