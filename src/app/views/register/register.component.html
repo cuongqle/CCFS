@@ -28,11 +28,18 @@
                 <input type="email" class="form-control form-control-danger" formControlName="email" placeholder="Email" required>
               </div>
 
-              <div class="input-group" [ngClass]="{'has-danger has-feedback': f.submitted && !form.controls.password.valid}">
+              <div class="input-group mb-3" [ngClass]="{'has-danger has-feedback': f.submitted && !form.controls.password.valid}">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="icon-lock"></i></span>
                 </div>
                 <input type="password" class="form-control form-control-danger" formControlName="password" placeholder="Password" required>
+              </div>
+
+              <div class="input-group" [ngClass]="{'has-danger has-feedback': f.submitted && !form.controls.confirmPassword.valid || form.controls.confirmPassword.MatchPassword}">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="icon-lock"></i></span>
+                </div>
+                <input type="password" class="form-control form-control-danger" formControlName="confirmPassword" placeholder="Confirm Password" required>
               </div>
 
             </div>

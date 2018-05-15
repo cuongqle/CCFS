@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {PasswordValidation} from "./validators/password.validator";
 
 @Component({
   templateUrl: 'register.component.html'
@@ -17,7 +18,10 @@ export class RegisterComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required]
+    }, {
+      validator: PasswordValidation.MatchPassword
     });
   }
 
