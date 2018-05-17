@@ -1,14 +1,18 @@
 import {Component, OnInit} from "@angular/core";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {DebtorStatus, DebtorType} from "../../../../../dtos/debtorDTOs";
+import {ToastrComponent} from "../../../toastr.component";
+import {ToasterService} from "angular2-toaster";
+import {DebtorService} from "../../../../../services/debtor.service";
 
 @Component({
   templateUrl: 'create-debtor.component.html'
 })
-export class CreateDebtorComponent implements OnInit {
+export class CreateDebtorComponent extends ToastrComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private debtorService: DebtorService, protected toasterService: ToasterService) {
+    super(toasterService);
   }
 
   ngOnInit() {
@@ -25,7 +29,9 @@ export class CreateDebtorComponent implements OnInit {
 
   save() {
     if (this.form.valid) {
-
+      this.debtorService.createDebtor(this.form.value).subscribe(
+        data => { this.showSuccess('Debtor created'); },
+        error => { this.showError('Error'); });
     }
   }
 }

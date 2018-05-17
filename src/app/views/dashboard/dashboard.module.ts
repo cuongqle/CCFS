@@ -20,6 +20,7 @@ import {TemplateService} from "../../services/template.service";
 import {GetTemplateListResolver} from "../../services/resolvers/template-list.resolver";
 import {CreateInvoiceComponent} from "./debtor/invoice/create/create-invoice.component";
 import {CreateDebtorComponent} from "./debtor/details/create/create-debtor.component";
+import {ToasterModule} from "angular2-toaster";
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import {CreateDebtorComponent} from "./debtor/details/create/create-debtor.compo
     ChartsModule,
     FormsModule,
     ReactiveFormsModule,
-    SelectModule
+    SelectModule,
+    ToasterModule
   ],
   declarations: [
     DashboardComponent,

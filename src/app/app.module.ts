@@ -70,6 +70,7 @@ import {AuthGuard} from "./services/auth-guard.service";
 import {UserService} from "./services/user.service";
 import {HttpClientModule} from "@angular/common/http";
 import {GetLoggedUserResolver} from "./services/resolvers/logged-user.resolver";
+import {ToasterModule} from "angular2-toaster";
 
 @NgModule({
   imports: [
@@ -80,6 +81,7 @@ import {GetLoggedUserResolver} from "./services/resolvers/logged-user.resolver";
     TabsModule.forRoot(),
     ChartsModule,
     HttpClientModule,
+    ToasterModule,
     LocalStorageModule.withConfig({
       prefix: 'CCFS',
       storageType: 'localStorage'
