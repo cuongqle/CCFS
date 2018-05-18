@@ -21,6 +21,7 @@ import {GetTemplateListResolver} from "../../services/resolvers/template-list.re
 import {CreateInvoiceComponent} from "./debtor/invoice/create/create-invoice.component";
 import {CreateDebtorComponent} from "./debtor/details/create/create-debtor.component";
 import {ToasterModule} from "angular2-toaster";
+import {Ng4GeoautocompleteModule} from "ng4-geoautocomplete";
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import {ToasterModule} from "angular2-toaster";
     FormsModule,
     ReactiveFormsModule,
     SelectModule,
-    ToasterModule
+    ToasterModule,
+    Ng4GeoautocompleteModule.forRoot()
   ],
   declarations: [
     DashboardComponent,
