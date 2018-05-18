@@ -106,3 +106,22 @@
   font-weight: bold;
   font-size: 20px;
 }
+
+.custom-autocomplete {
+  input {
+    border: 1px solid #e1e6ef!important;
+    border-radius: 0!important;
+    height: 35px!important;
+    font-size: 0.875rem!important;
+    &:focus {
+      border-color: #8ad4ee!important;
+      border-radius: 0;
+      -webkit-box-shadow: 0 0 0 0.2rem rgba(32, 168, 216, 0.25);
+      box-shadow: 0 0 0 0.2rem rgba(32, 168, 216, 0.25);
+      outline: 0;
+    }
+  }
+  .search-icon {
+    display: none;
+  }
+}

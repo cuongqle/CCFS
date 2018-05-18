@@ -3,13 +3,13 @@ import {User} from "../../../dtos/userDTOs";
 import {ActivatedRoute} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../../services/user.service";
-import {ToastrComponent} from "../toastr.component";
 import {ToasterService} from "angular2-toaster";
+import {CcfsComponent} from "../ccfs.component";
 
 @Component({
   templateUrl: 'setting.component.html'
 })
-export class SettingComponent extends ToastrComponent implements OnInit  {
+export class SettingComponent extends CcfsComponent implements OnInit  {
   user: User;
   form: FormGroup;
   loading: boolean = false;
@@ -48,6 +48,11 @@ export class SettingComponent extends ToastrComponent implements OnInit  {
         bankInfo: [this.user.userCompanyInfo.bankInfo, [Validators.required]]
       })
     });
+    this.geoSettings = Object.assign({ inputString: this.user.userCompanyInfo.address }, this.geoSettings);
+  }
+
+  onAddressChanged($event: any) {
+    console.log($event);
   }
 
   save() {
