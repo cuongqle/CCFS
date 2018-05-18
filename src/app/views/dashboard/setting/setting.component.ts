@@ -52,8 +52,9 @@ export class SettingComponent extends CcfsComponent implements OnInit  {
   }
 
   onAddressChanged($event: any) {
+    const companyInfo: any = this.form.controls['userCompanyInfo'];
+    companyInfo.controls['address'].setValue(null);
     if ($event.data) {
-      const companyInfo: any = this.form.controls['userCompanyInfo'];
       companyInfo.controls['address'].setValue($event.data.description);
     }
   }
