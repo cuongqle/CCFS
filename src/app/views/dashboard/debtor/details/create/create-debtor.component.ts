@@ -24,7 +24,18 @@ export class CreateDebtorComponent extends DebtorFormComponent {
       mobileNumber: [null],
       directorName: [null],
       debtorType: [DebtorType.Company],
-      status: [DebtorStatus.Active]
+      status: [DebtorStatus.Active],
+      addresses: this.formBuilder.array(
+        Array(2).fill({}).map((c, i) => {
+            return this.formBuilder.group({
+              addressType: [i === 0 ? AddressType.BillingAddress : AddressType.ServiceAddress],
+              address: [null],
+              city: [null],
+              postcode: [null]
+            })
+          }
+        )
+      )
     });
   }
 

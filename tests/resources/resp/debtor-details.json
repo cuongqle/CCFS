@@ -7,5 +7,17 @@
   "mobileNumber": "+90875728",
   "email": "test@gmail.com",
   "addresses": [
+    {
+      "addressType": 1,
+      "address": "Quay St, Auckland, 1140, New Zealand",
+      "city": "Auckland",
+      "postcode": "1140"
+    },
+    {
+      "addressType": 2,
+      "address": "22 Jellicoe St, Freemans Bay, Auckland 1010, New Zealand",
+      "city": "Auckland",
+      "postcode": "1010"
+    }
   ]
 }

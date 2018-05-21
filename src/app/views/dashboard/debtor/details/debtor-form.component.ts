@@ -22,21 +22,33 @@ export class DebtorFormComponent extends CcfsComponent implements OnInit {
   protected saveDebtor() {}
 
   private onAddressChanged($event: any, addressType: number) {
-    let addresses = this.form.controls['addresses'];
-    if (!addresses) {
-      addresses = this.formBuilder.array([]);
-    }
+    const addresses = this.form.controls['addresses'];
     const values = addresses.value;
     const address = values.find(a => a.addressType === addressType);
+    let postcode = "", city = "";
+    if ($event.data && $event.data.address_components) {
+      const ac = $event.data.address_components.find((a) => { return a.types[0] === 'postal_code' });
+      if (ac) {
+        postcode = ac.short_name;
+      }
+      ac = $event.data.address_components.find((a) => { return a.types[0] === 'locality' &&  a.types[1] === 'political' });
+      if (ac) {
+        city = ac.short_name;
+      }
+    }
     if (address) {
       address.address = $event.data ? $event.data.description : null;
+      address.city = city;
+      address.postcode = postcode;
     } else {
       (<FormArray>addresses).push(this.formBuilder.group({
         addressType: [addressType],
-        address: [$event.data ? $event.data.description : null]
+        address: [$event.data ? $event.data.description : null],
+        city: city,
+        postcode: postcode
       }));
     }
-    this.form.controls['addresses'] = addresses;
+    this.form.controls['addresses'].setValue(addresses.value);
   }
 
   onBillAddressChanged($event: any) {

@@ -28,11 +28,11 @@
               </div>
               <div class="form-group row" style="min-height: 35px;">
               </div>
-              <div class="card">
+              <div class="card" formArrayName="addresses">
                 <div class="card-header">
                   Bill Address
                 </div>
-                <div class="card-body">
+                <div class="card-body" [formGroupName]="0">
                   <div class="form-group row">
                     <label class="col-md-4 col-form-label">Address</label>
                     <div class="col-md-8">
@@ -45,13 +45,13 @@
                   <div class="form-group row">
                     <label class="col-md-4 col-form-label">City</label>
                     <div class="col-md-8">
-                      <input class="form-control form-control-danger" >
+                      <input class="form-control form-control-danger" formControlName="city">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label class="col-md-4 col-form-label">Post Code</label>
                     <div class="col-md-8">
-                      <input class="form-control form-control-danger" >
+                      <input class="form-control form-control-danger" formControlName="postcode">
                     </div>
                   </div>
                 </div>
@@ -86,11 +86,11 @@
                   <input class="form-control form-control-danger" formControlName="directorName">
                 </div>
               </div>
-              <div class="card">
+              <div class="card" formArrayName="addresses">
                 <div class="card-header">
                   Address Of Service
                 </div>
-                <div class="card-body">
+                <div class="card-body" [formGroupName]="1">
                   <div class="form-group row">
                     <label class="col-md-4 col-form-label">Address</label>
                     <div class="col-md-8">
@@ -103,13 +103,13 @@
                   <div class="form-group row">
                     <label class="col-md-4 col-form-label">City</label>
                     <div class="col-md-8">
-                      <input class="form-control form-control-danger" >
+                      <input class="form-control form-control-danger" formControlName="city">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label class="col-md-4 col-form-label">Post Code</label>
                     <div class="col-md-8">
-                      <input class="form-control form-control-danger" >
+                      <input class="form-control form-control-danger" formControlName="postcode">
                     </div>
                   </div>
                 </div>
