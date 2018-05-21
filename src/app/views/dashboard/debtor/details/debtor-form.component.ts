@@ -27,7 +27,7 @@ export class DebtorFormComponent extends CcfsComponent implements OnInit {
     const address = values.find(a => a.addressType === addressType);
     let postcode = "", city = "";
     if ($event.data && $event.data.address_components) {
-      const ac = $event.data.address_components.find((a) => { return a.types[0] === 'postal_code' });
+      let ac = $event.data.address_components.find((a) => { return a.types[0] === 'postal_code' });
       if (ac) {
         postcode = ac.short_name;
       }
