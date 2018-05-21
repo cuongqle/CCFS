@@ -5,12 +5,12 @@
 
 export enum DebtorType {
   Company = 1,
-  NonCompany 
+  NonCompany
 }
 
 export enum DebtorStatus {
   Active = 1,
-  Close  
+  Close
 }
 
 export class Address {
@@ -18,7 +18,7 @@ export class Address {
   address: string;
   city: string;
   postcode: string;
-} 
+}
 
 export class Debtor {
   id: number;
@@ -29,7 +29,7 @@ export class Debtor {
   directorName: string;
   mobileNumber: string;
   email: string;
-  addresses : Address[];
+  addresses: Address[];
   status: DebtorStatus;
   invoices: DebtorInvoice[];
   userCompanyID: number;

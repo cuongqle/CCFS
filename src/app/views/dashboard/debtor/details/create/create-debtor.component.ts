@@ -1,6 +1,6 @@
-import {Component, OnInit} from "@angular/core";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {DebtorStatus, DebtorType} from "../../../../../dtos/debtorDTOs";
+import {Component} from "@angular/core";
+import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AddressType, DebtorStatus, DebtorType} from "../../../../../dtos/debtorDTOs";
 import {ToasterService} from "angular2-toaster";
 import {DebtorService} from "../../../../../services/debtor.service";
 import {DebtorFormComponent} from "../debtor-form.component";

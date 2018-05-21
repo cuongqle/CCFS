@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Debtor} from "../../../../../dtos/debtorDTOs";
+import {AddressType, Debtor} from "../../../../../dtos/debtorDTOs";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {DebtorService} from "../../../../../services/debtor.service";
 import {ToasterService} from "angular2-toaster";
@@ -20,6 +20,9 @@ export class DebtorDetailsComponent extends DebtorFormComponent {
   }
 
   protected createDebtorForm() {
+    if (!this.debtor.addresses) {
+      this.debtor.addresses = Array(2).fill({});
+    }
     this.form = this.formBuilder.group({
       id: [this.debtor.id],
       name: [this.debtor.name, Validators.required],
