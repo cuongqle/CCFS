@@ -23,7 +23,6 @@
               <div class="form-group row" [ngClass]="{'has-danger has-feedback': !form.controls.userCompanyInfo.controls.address.valid}">
                 <label class="col-md-3 col-form-label">Address</label>
                 <div class="col-md-8">
-                  <!--<input class="form-control form-control-danger" formControlName="address">-->
                   <ng4geo-autocomplete
                     [userSettings]="geoSettings"
                     (componentCallback)="onAddressChanged($event)">

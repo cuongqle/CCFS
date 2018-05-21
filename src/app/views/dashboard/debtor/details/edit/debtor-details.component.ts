@@ -1,24 +1,25 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Component} from '@angular/core';
 import {Debtor} from "../../../../../dtos/debtorDTOs";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {DebtorService} from "../../../../../services/debtor.service";
 import {ToasterService} from "angular2-toaster";
-import {ToastrComponent} from "../../../toastr.component";
+import {DebtorFormComponent} from "../debtor-form.component";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   templateUrl: 'debtor-details.component.html'
 })
-export class DebtorDetailsComponent extends ToastrComponent implements OnInit {
+export class DebtorDetailsComponent extends DebtorFormComponent {
   debtor: Debtor;
   form: FormGroup;
 
-  constructor(private activatedRouter: ActivatedRoute, private formBuilder: FormBuilder, private debtorService: DebtorService, protected toasterService: ToasterService) {
-    super(toasterService);
+  constructor(protected activatedRouter: ActivatedRoute, protected formBuilder: FormBuilder, protected debtorService: DebtorService, protected toasterService: ToasterService) {
+    super(activatedRouter, formBuilder, debtorService, toasterService);
+
     this.debtor = this.activatedRouter.snapshot.data['resolverGetDebtorById'];
   }
 
-  ngOnInit() {
+  protected createDebtorForm() {
     this.form = this.formBuilder.group({
       id: [this.debtor.id],
       name: [this.debtor.name, Validators.required],
@@ -31,11 +32,9 @@ export class DebtorDetailsComponent extends ToastrComponent implements OnInit {
     });
   }
 
-  save() {
-    if (this.form.valid) {
-      this.debtorService.updateDebtor(this.form.value).subscribe(
-        data => { this.showSuccess('Debtor saved'); },
-        error => { this.showError('Error'); });
-    }
+  saveDebtor() {
+    this.debtorService.updateDebtor(this.form.value).subscribe(
+      data => { this.showSuccess('Debtor saved'); },
+      error => { this.showError('Error'); });
   }
 }
