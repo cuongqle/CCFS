@@ -9,7 +9,8 @@ import {AddressType} from "../../../../dtos/debtorDTOs";
 export class DebtorFormComponent extends CcfsComponent implements OnInit {
   form: FormGroup;
 
-  constructor(protected activatedRouter: ActivatedRoute, protected formBuilder: FormBuilder, protected debtorService: DebtorService, protected toasterService: ToasterService) {
+  constructor(protected activatedRouter: ActivatedRoute, protected formBuilder: FormBuilder,
+              protected debtorService: DebtorService, protected toasterService: ToasterService) {
     super(toasterService);
   }
 
