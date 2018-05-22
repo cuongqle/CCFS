@@ -6,12 +6,12 @@
           Invoice
         </div>
         <div class="card-body">
-          <form class="form-horizontal row">
+          <form [formGroup]="form" class="form-horizontal row">
             <div class="col-md-12">
               <div class="form-group row">
                 <label class="col-md-2 col-form-label">Debtor</label>
                 <div class="col-md-10">
-                  <input class="form-control form-control-danger" >
+                  <input class="form-control form-control-danger" formControlName="debtorId">
                 </div>
               </div>
             </div>
@@ -19,7 +19,7 @@
               <div class="form-group row">
                 <label class="col-md-4 col-form-label">Invoice No.</label>
                 <div class="col-md-8">
-                  <input class="form-control form-control-danger" >
+                  <input class="form-control form-control-danger" formControlName="invoiceNumber">
                 </div>
               </div>
             </div>
@@ -27,7 +27,7 @@
               <div class="form-group row">
                 <label class="col-md-4 col-form-label">Invoice Date</label>
                 <div class="col-md-8">
-                  <input class="form-control form-control-danger" >
+                  <input class="form-control form-control-danger" formControlName="invoiceDate">
                 </div>
               </div>
             </div>
@@ -35,7 +35,7 @@
               <div class="form-group row">
                 <label class="col-md-4 col-form-label">Invoice Amount</label>
                 <div class="col-md-8">
-                  <input class="form-control form-control-danger" >
+                  <input class="form-control form-control-danger" formControlName="invoiceAmount">
                 </div>
               </div>
             </div>
@@ -43,16 +43,17 @@
               <div class="form-group row">
                 <label class="col-md-4 col-form-label">Outstanding Amount</label>
                 <div class="col-md-8">
-                  <input class="form-control form-control-danger" >
+                  <input class="form-control form-control-danger" formControlName="outstandingAmount">
                 </div>
               </div>
             </div>
           </form>
         </div>
         <div class="card-footer right">
-          <button class="btn btn-sm btn-primary btn-save">Save</button>
+          <button class="btn btn-sm btn-primary btn-save" (click)="save()" [attr.disabled]="!form.valid ? '' : null">Save</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+<toaster-container [toasterconfig]="toasterconfig"></toaster-container>
