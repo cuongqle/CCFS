@@ -21,11 +21,11 @@ export class DebtorFormComponent extends CcfsComponent implements OnInit {
 
   protected saveDebtor() {}
 
-  private onAddressChanged($event: any, addressType: number) {
+  private setAddressValue($event: any, addressType: number) {
     const addresses = this.form.controls['addresses'];
     const values = addresses.value;
     const address = values.find(a => a.addressType === addressType);
-    let postcode = "", city = "";
+    let postcode = address.postcode, city = address.city;
     if ($event.data && $event.data.address_components) {
       let ac = $event.data.address_components.find((a) => { return a.types[0] === 'postal_code' });
       if (ac) {
@@ -52,15 +52,18 @@ export class DebtorFormComponent extends CcfsComponent implements OnInit {
   }
 
   onBillAddressChanged($event: any) {
-    this.onAddressChanged($event, AddressType.BillingAddress);
+    this.setAddressValue($event, AddressType.BillingAddress);
   }
 
   onServiceAddressChanged($event: any) {
-    this.onAddressChanged($event, AddressType.ServiceAddress);
+    this.setAddressValue($event, AddressType.ServiceAddress);
   }
 
   save() {
     if (this.form.valid) {
+      const searchInputs: any = document.getElementsByName('search');
+      this.setAddressValue({ data: { description: searchInputs[0].value }}, AddressType.BillingAddress);
+      this.setAddressValue({ data: { description: searchInputs[1].value }}, AddressType.ServiceAddress);
       this.saveDebtor();
     }
   }
