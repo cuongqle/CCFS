@@ -13,6 +13,9 @@ export class DebtorDetailsComponent extends DebtorFormComponent {
   debtor: Debtor;
   form: FormGroup;
 
+  geoSettings1: any;
+  geoSettings2: any;
+
   constructor(protected activatedRouter: ActivatedRoute, protected formBuilder: FormBuilder, protected debtorService: DebtorService, protected toasterService: ToasterService) {
     super(activatedRouter, formBuilder, debtorService, toasterService);
 

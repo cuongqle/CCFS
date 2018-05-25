@@ -37,7 +37,7 @@
                     <label class="col-md-4 col-form-label">Address</label>
                     <div class="col-md-8">
                       <ng4geo-autocomplete
-                        [userSettings]="geoSettings1"
+                        [userSettings]="geoSettings"
                         (componentCallback)="onBillAddressChanged($event)">
                       </ng4geo-autocomplete>
                     </div>
@@ -95,7 +95,7 @@
                     <label class="col-md-4 col-form-label">Address</label>
                     <div class="col-md-8">
                       <ng4geo-autocomplete
-                        [userSettings]="geoSettings2"
+                        [userSettings]="geoSettings"
                         (componentCallback)="onServiceAddressChanged($event)">
                       </ng4geo-autocomplete>
                     </div>

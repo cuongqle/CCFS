@@ -29,7 +29,7 @@ export class CreateDebtorComponent extends DebtorFormComponent {
         Array(2).fill({}).map((c, i) => {
             return this.formBuilder.group({
               addressType: [i === 0 ? AddressType.BillingAddress : AddressType.ServiceAddress],
-              address: ['New Zealand'],
+              address: [null],
               city: [null],
               postcode: [null]
             })
@@ -39,8 +39,6 @@ export class CreateDebtorComponent extends DebtorFormComponent {
     });
 
     const addresses: any = this.form.controls.addresses;
-    this.geoSettings1 = Object.assign({ inputString: addresses.controls[0].value.address }, this.geoSettings);
-    this.geoSettings2 = Object.assign({ inputString: addresses.controls[1].value.address }, this.geoSettings);
   }
 
   saveDebtor() {
