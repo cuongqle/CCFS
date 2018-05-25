@@ -51,7 +51,7 @@ export class SettingComponent extends CcfsComponent implements OnInit  {
     this.geoSettings = Object.assign({ inputString: this.user.userCompanyInfo.address }, this.geoSettings);
   }
 
-  onAddressChanged($event: any) {
+  private setAddressValue($event: any) {
     const companyInfo: any = this.form.controls['userCompanyInfo'];
     companyInfo.controls['address'].setValue(null);
     if ($event.data) {
@@ -59,9 +59,15 @@ export class SettingComponent extends CcfsComponent implements OnInit  {
     }
   }
 
+  onAddressChanged($event: any) {
+    this.setAddressValue($event);
+  }
+
   save() {
     if (this.form.valid) {
       this.loading = true;
+      const searchInput: any = document.getElementsByName('search');
+      this.setAddressValue({ data: { description: searchInput[0].value }});
       this.userService.update(this.form.value).subscribe(
         data => {
           this.loading = false;
