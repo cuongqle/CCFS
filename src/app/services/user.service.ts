@@ -30,6 +30,14 @@ export class UserService extends AbstractService {
     });
   }
 
+  uploadLogo(file: any) {
+    return this.http.post(`${this.baseURL}/api/upload/logo`, file, {
+      headers: {
+        'Authorization': this.getAuthorization()
+      }
+    });
+  }
+
   getById(id: number) {
     return this.http.get(`${this.baseURL}/api/user/` + id, {
       headers: {

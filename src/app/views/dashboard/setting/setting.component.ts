@@ -63,6 +63,25 @@ export class SettingComponent extends CcfsComponent implements OnInit  {
     this.setAddressValue($event);
   }
 
+  onLogoChanged($event: any) {
+    if ($event.target.files.length > 0) {
+      const formData: any = new FormData();
+      const file = $event.target.files[0];
+      formData.append('logo', file, file.name);
+      this.userService.uploadLogo(formData).subscribe(
+        (data: any) => {
+          this.loading = false;
+          this.user.userCompanyInfo.logo = data.url;
+          this.showSuccess('Logo uploaded');
+        },
+        error => {
+          this.loading = false;
+          this.showError('Error in upload logo');
+        }
+      );
+    }
+  }
+
   save() {
     if (this.form.valid) {
       this.loading = true;

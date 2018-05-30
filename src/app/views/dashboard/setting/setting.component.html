@@ -68,8 +68,11 @@
               <div class="form-group row">
                 <label class="col-md-3 col-form-label">Logo</label>
                 <div class="col-md-9">
-                  <div class="logo">
-                    <input type="file">
+                  <div class="logo" *ngIf="!user.userCompanyInfo.logo">
+                    <input type="file" (change)="onLogoChanged($event)">
+                  </div>
+                  <div class="logo" *ngIf="user.userCompanyInfo.logo">
+                    <img src={{user.userCompanyInfo.logo}}>
                   </div>
                 </div>
               </div>
