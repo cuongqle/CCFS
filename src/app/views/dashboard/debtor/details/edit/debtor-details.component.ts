@@ -46,6 +46,8 @@ export class DebtorDetailsComponent extends DebtorFormComponent {
 
     this.geoSettings1 = Object.assign({ inputString: this.debtor.addresses[0].address }, this.geoSettings);
     this.geoSettings2 = Object.assign({ inputString: this.debtor.addresses[1].address }, this.geoSettings);
+    this.geoCitySettings1 = Object.assign({ inputString: this.debtor.addresses[0].city }, this.geoCitySettings1);
+    this.geoCitySettings2 = Object.assign({ inputString: this.debtor.addresses[1].city }, this.geoCitySettings2);
   }
 
   saveDebtor() {

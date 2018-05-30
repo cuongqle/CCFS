@@ -12,7 +12,8 @@ import {ActivatedRoute} from "@angular/router";
 export class CreateDebtorComponent extends DebtorFormComponent {
   form: FormGroup;
 
-  constructor(protected activatedRouter: ActivatedRoute, protected formBuilder: FormBuilder, protected debtorService: DebtorService, protected toasterService: ToasterService) {
+  constructor(protected activatedRouter: ActivatedRoute, protected formBuilder: FormBuilder,
+              protected debtorService: DebtorService, protected toasterService: ToasterService) {
     super(activatedRouter, formBuilder, debtorService, toasterService);
   }
 
