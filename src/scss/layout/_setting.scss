@@ -4,11 +4,15 @@
     height: auto;
     min-height: 200px;
     border: 1px solid #e1e6ef;
+    position: relative;
     input {
       width: 100%;
       min-height: 200px;
       opacity: 0;
       cursor: pointer;
+      position: absolute;
+      top: 0;
+      height: 100%;
     }
     img {
       max-width: 100%;
