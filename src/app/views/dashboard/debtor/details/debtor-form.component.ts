@@ -62,10 +62,11 @@ export class DebtorFormComponent extends CcfsComponent implements OnInit {
       const ac = $event.data.address_components.find((a) => { return a.types[0] === 'locality' &&  a.types[1] === 'political' });
       if (ac) {
         city = ac.short_name;
+        const geoCitySettings: any = Object.assign({ geoTypes: ['(cities)'] }, this.geoSettings);
         if (addressType === AddressType.BillingAddress) {
-          this.geoCitySettings1.inputString = city;
+          this.geoCitySettings1 = Object.assign({ inputString: city }, geoCitySettings);
         } else {
-          this.geoCitySettings2.inputString = city;
+          this.geoCitySettings2 = Object.assign({ inputString: city }, geoCitySettings);
         }
       }
     }
