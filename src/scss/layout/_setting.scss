@@ -5,18 +5,21 @@
     min-height: 200px;
     border: 1px solid #e1e6ef;
     position: relative;
-    input {
-      width: 100%;
-      min-height: 200px;
-      opacity: 0;
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-    }
     img {
       max-width: 100%;
+    }
+  }
+  .upload-btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-top: 5px;
+    input[type=file] {
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
     }
   }
 }
