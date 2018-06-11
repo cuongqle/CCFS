@@ -65,20 +65,25 @@ export class SettingComponent extends CcfsComponent implements OnInit  {
 
   onLogoChanged($event: any) {
     if ($event.target.files.length > 0) {
-      const formData: any = new FormData();
       const file = $event.target.files[0];
-      formData.append('logo', file, file.name);
-      this.userService.uploadLogo(formData).subscribe(
-        (data: any) => {
-          this.loading = false;
-          this.user.userCompanyInfo.logo = data.url;
-          this.showSuccess('Logo uploaded');
-        },
-        error => {
-          this.loading = false;
-          this.showError('Error in upload logo');
-        }
-      );
+      const fileSize = file.size;
+      if (fileSize > 1028*1000) {
+        this.showError('File size is greater than allowed limit is 1MB. Please choose another file.');
+      } else {
+        const formData: any = new FormData();
+        formData.append('logo', file, file.name);
+        this.userService.uploadLogo(formData).subscribe(
+          (data: any) => {
+            this.loading = false;
+            this.user.userCompanyInfo.logo = data.url;
+            this.showSuccess('Logo uploaded');
+          },
+          error => {
+            this.loading = false;
+            this.showError('Error in upload logo');
+          }
+        );
+      }
     }
   }
 
