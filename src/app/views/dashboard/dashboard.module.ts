@@ -22,6 +22,7 @@ import {CreateInvoiceComponent} from "./debtor/invoice/create/create-invoice.com
 import {CreateDebtorComponent} from "./debtor/details/create/create-debtor.component";
 import {ToasterModule} from "angular2-toaster";
 import {Ng4GeoautocompleteModule} from "ng4-geoautocomplete";
+import {SafeHtmlPipe} from "../../pipes/html";
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import {Ng4GeoautocompleteModule} from "ng4-geoautocomplete";
     Ng4GeoautocompleteModule.forRoot()
   ],
   declarations: [
+    SafeHtmlPipe,
     DashboardComponent,
     SettingComponent,
     DebtorComponent,
