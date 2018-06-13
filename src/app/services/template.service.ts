@@ -16,4 +16,13 @@ export class TemplateService extends AbstractService {
       }
     });
   }
+
+  getTemplateHtml(type: string) {
+    return this.http.get(`${this.baseURL}/api/template/html/${type}`, {
+      headers: {
+        'Authorization': this.getAuthorization()
+      },
+      responseType: 'text'
+    });
+  }
 }
