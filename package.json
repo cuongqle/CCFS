@@ -13,10 +13,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "nodemon:fake": "nodemon -w tests/resources/backend-stub/backend-stub.js -w tests/resources tests/resources/backend-stub/backend-stub.js",
-    "backend-stub": "concurrently -n 'fake' -p name 'npm run nodemon:fake'",
-    "mockBackend:run": "node ./tests/resources/backend-stub/backend-stub & echo $! > fakeServer.pid",
-    "mockBackend:kill": "kill -9 $(cat fakeServer.pid) || true && rm fakeServer.pid"
+    "backend-stub": "node ./tests/resources/backend-stub/backend-stub"
   },
   "private": true,
   "dependencies": {
